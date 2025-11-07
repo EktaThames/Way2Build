@@ -8,8 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +21,63 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+/*  add this to globals.css */
+
+/* Ensure react-slick internal elements take full height */
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide > div {
+  height: 100%;
+}
+#__next_image_component {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/* add transition for text */
+
+.slick-slide > div > div.z-10 {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slick-current > div > div.z-10 {
+  opacity: 1;
+}
+
+/* Increase text shadow for better readability */
+.z-10 p,
+.z-10 h1,
+.z-10 button {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Increased shadow */
+}
+
+/* Increase contrast by adjusting the overlay */
+.absolute.inset-0.bg-black.opacity-40.z-0 {
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+}
+
+
+
+/* Custom styles for react-slick dots to match archo.vercel.app */
+.slick-dots {
+  bottom: 30px !important; /* Position dots from the bottom */
+}
+
+.slick-dots li {
+  margin: 0 5px !important; /* Spacing between dots */
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important; /* Smaller dot size */
+  color: white !important; /* White color for dots */
+  opacity: 0.5 !important; /* Slightly transparent for inactive dots */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important; /* Fully opaque for the active dot */
 }
