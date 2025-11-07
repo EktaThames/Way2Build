@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 const testimonialsData = [
   {
     id: 1,
@@ -30,7 +30,13 @@ const testimonialsData = [
   },
 ];
 
-const CustomNextArrow = (props) => {
+interface CustomArrowProps {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}
+
+const CustomNextArrow: React.FC<CustomArrowProps> = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
@@ -43,7 +49,7 @@ const CustomNextArrow = (props) => {
   );
 };
 
-const CustomPrevArrow = (props) => {
+const CustomPrevArrow: React.FC<CustomArrowProps> = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
