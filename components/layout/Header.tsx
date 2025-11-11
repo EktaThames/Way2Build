@@ -14,9 +14,9 @@ export default function Header() {
             <li><Link href="/portfolio" className="hover:text-gray-300">Portfolio</Link></li>
             <li><Link href="/contact" className="hover:text-gray-300">Contact</Link></li>
           </ul>
-          <button className="border border-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-white hover:text-black transition-colors duration-300">
+          {/* <button className="border border-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-white hover:text-black transition-colors duration-300">
             Let's Talk
-          </button>
+          </button> */}
         </div>
       </nav>
     </header>
