@@ -62,7 +62,11 @@ const CustomPrevArrow: React.FC<CustomArrowProps> = (props) => {
   );
 };
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  theme?: 'light' | 'dark';
+}
+
+const Testimonials: React.FC<TestimonialsProps> = ({ theme = 'light' }) => {
   const sliderRef = useRef<Slider>(null);
   const settings = {
     dots: false,
@@ -90,16 +94,15 @@ const Testimonials = () => {
   }; 
 
   return (
-    <section 
-      className="py-24 md:py-32 font-sans overflow-hidden"
-      style={{ backgroundColor: "#f8f4f3" }}
+    <section
+      className={`py-24 md:py-32 font-sans overflow-hidden ${theme === 'light' ? 'bg-[#f8f4f3]' : 'bg-black'}`}
     >
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <div className="relative inline-block"><p className="tracking-[0.3em] uppercase text-[12px] md:text-[13px] mb-[15px] font-light text-[#b19777]">
                 Testimonials
               </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#222222] mb-4 uppercase tracking-wider">
+            <h2 className={`text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wider ${theme === 'light' ? 'text-[#222222]' : 'text-white'}`}>
               What Client's Say?
             </h2>
             <div className="absolute w-16 h-px bg-[#b19777] left-1/2 transform -translate-x-1/2 bottom-0"></div>
@@ -114,7 +117,7 @@ const Testimonials = () => {
                 <div className="mb-8">
                   <i className="ri-double-quotes-l text-7xl text-[#b19777] opacity-20"></i>
                 </div>
-                <p className="text-lg italic text-gray-600 leading-relaxed mb-8">
+                <p className={`text-lg italic leading-relaxed mb-8 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
                   {testimonial.quote}
                 </p>
                 <div className="h-px w-16 bg-gray-300 mb-8"></div>
@@ -123,7 +126,7 @@ const Testimonials = () => {
                     <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="object-cover" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#222222]">{testimonial.name}</h4>
+                    <h4 className={`text-lg font-bold ${theme === 'light' ? 'text-[#222222]' : 'text-white'}`}>{testimonial.name}</h4>
                     <p className="text-sm text-[#b19777]">{testimonial.title}</p>
                   </div>
                 </div>
@@ -132,8 +135,8 @@ const Testimonials = () => {
           ))}
         </Slider> 
         <div className="flex justify-center items-center space-x-4 mt-12">
-            <CustomPrevArrow onClick={() => sliderRef.current?.slickPrev()} />
-            <CustomNextArrow onClick={() => sliderRef.current?.slickNext()} />
+            <CustomPrevArrow onClick={() => sliderRef.current?.slickPrev()}  />
+            <CustomNextArrow onClick={() => sliderRef.current?.slickNext()}  />
           </div>
         </div>
       </div>

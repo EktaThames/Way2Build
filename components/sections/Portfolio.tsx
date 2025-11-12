@@ -13,7 +13,7 @@ const allWorks = [
   { id: 6, title: "Commercial Tower", category: "Construction", image: "/images/portfolio1.jpg", height: "h-80" },
 ];
 
-const filters = ["All", "Architecture", "Interior", "Construction"];
+const filters = ["All"];
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
