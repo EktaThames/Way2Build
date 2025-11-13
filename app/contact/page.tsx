@@ -1,7 +1,45 @@
-import React from 'react';
+"use client";
+
+import React, { useState, FormEvent } from 'react';
 import Image from 'next/image';
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Failed to send message.');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('Failed to send message. Please try again.');
+    }
+  };
+
   return (
     <div className="bg-[#1f1f1f] text-white font-sans">
       {/* Page Header */}
@@ -49,40 +87,58 @@ const ContactPage = () => {
 
         {/* Contact Form Section */}
         <div className="max-w-4xl mx-auto">
-          <form className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Full Name"
+                required
                 className="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-[#b19777] transition-colors duration-300"
               />
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
+                required
                 className="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-[#b19777] transition-colors duration-300"
               />
             </div>
             <div>
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="Subject"
+                required
                 className="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-[#b19777] transition-colors duration-300"
               />
             </div>
             <div>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
                 rows={6}
+                required
                 className="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-[#b19777] transition-colors duration-300"
               ></textarea>
             </div>
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-[#b19777] text-white font-semibold py-4 px-12 rounded-lg hover:bg-[#a08665] transition-colors duration-300"
+                className="bg-[#b19777] text-white font-semibold py-4 px-12 rounded-lg hover:bg-[#a08665] transition-colors duration-300 disabled:bg-gray-500"
+                disabled={status === 'Sending...'}
               >
-                Send Message
+                {status === 'Sending...' ? 'Sending...' : 'Send Message'}
               </button>
+              {status && <p className="mt-4 text-center">{status}</p>}
             </div>
           </form>
         </div>

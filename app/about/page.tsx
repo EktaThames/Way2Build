@@ -135,7 +135,7 @@ const AboutPage = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
             <div className="flex justify-center">
@@ -155,7 +155,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );
