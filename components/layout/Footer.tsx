@@ -47,15 +47,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <i className="ri-map-pin-line text-[#b19777] text-xl mr-4 mt-1"></i>
-                <span>123 Architecture Lane, Build City, BC 54321</span>
+                <span>Unit 6, Commerce Park, 19 Commerce Way, Croydon CR0 4YL</span>
               </li>
               <li className="flex items-start">
                 <i className="ri-phone-line text-[#b19777] text-xl mr-4 mt-1"></i>
-                <span>(123) 456-7890</span>
+                <span>+44 7350869596</span>
               </li>
               <li className="flex items-start">
                 <i className="ri-mail-line text-[#b19777] text-xl mr-4 mt-1"></i>
-                <span>contact@way2build.com</span>
+                <span>way2build.co.uk</span>
               </li>
             </ul>
           </div>

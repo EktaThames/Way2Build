@@ -29,21 +29,21 @@ const ContactPage = () => {
               <i className="ri-map-pin-line"></i>
             </div>
             <h3 className="text-2xl font-semibold">Our Office</h3>
-            <p className="text-gray-400">123 Architecture Lane, Build City, BC 54321</p>
+            <p className="text-gray-400">Unit 6, Commerce Park, 19 Commerce Way, Croydon CR0 4YL</p>
           </div>
           <div className="flex flex-col items-center space-y-4">
             <div className="w-20 h-20 bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#b19777] text-4xl mb-4">
               <i className="ri-mail-line"></i>
             </div>
             <h3 className="text-2xl font-semibold">Email Us</h3>
-            <p className="text-gray-400">contact@way2build.com</p>
+            <p className="text-gray-400">way2build.co.uk</p>
           </div>
           <div className="flex flex-col items-center space-y-4">
             <div className="w-20 h-20 bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#b19777] text-4xl mb-4">
               <i className="ri-phone-line"></i>
             </div>
             <h3 className="text-2xl font-semibold">Call Us</h3>
-            <p className="text-gray-400">(123) 456-7890</p>
+            <p className="text-gray-400">+44 7350869596</p>
           </div>
         </div>
 
