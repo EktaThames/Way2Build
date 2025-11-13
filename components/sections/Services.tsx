@@ -5,45 +5,45 @@ import React from "react";
 const servicesData = [
   {
     id: 1,
-    icon: "ri-building-line",
-    title: "Architecture Design",
+    icon: "ri-home-heart-line",
+    title: "Full Home Renovation",
     description:
-      "We offer comprehensive architecture design services, from concept to construction.",
+      "Complete home transformations, tailored to your lifestyle and vision.",
   },
   {
     id: 2,
-    icon: "ri-layout-line",
-    title: "Interior Design",
+    icon: "ri-fridge-line",
+    title: "Kitchen Renovation",
     description:
-      "Our interior design solutions create functional and aesthetically pleasing spaces.",
+      "Modern and functional kitchen designs to inspire your inner chef.",
   },
   {
     id: 3,
-    icon: "ri-landscape-line",
-    title: "Landscape Design",
+    icon: "ri-tools-line",
+    title: "Bathroom Renovation",
     description:
-      "We specialize in creating beautiful and sustainable landscape designs.",
+      "Create a spa-like retreat with our bespoke bathroom renovation services.",
   },
   {
     id: 4,
-    icon: "ri-tools-line",
-    title: "Construction Management",
+    icon: "ri-arrow-up-down-line",
+    title: "Loft Conversions",
     description:
-      "We provide expert construction management to ensure projects are completed on time and within budget.",
+      "Unlock the hidden potential of your home by converting your loft space.",
   },
   {
     id: 5,
-    icon: "ri-home-line",
-    title: "Renovation Services",
+    icon: "ri-add-box-line",
+    title: "House Extensions",
     description:
-      "We offer top-notch renovation services to transform your existing spaces.",
+      "Expand your living space with our seamless and stylish house extensions.",
   },
   {
     id: 6,
-    icon: "ri-community-line",
-    title: "Urban Planning",
+    icon: "ri-paint-brush-line",
+    title: "Painting & Decorating",
     description:
-      "We deliver innovative urban planning solutions for sustainable communities.",
+      "Professional painting and decorating services for a flawless finish.",
   },
 ];
 
