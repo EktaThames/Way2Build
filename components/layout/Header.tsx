@@ -26,6 +26,7 @@ const servicesList = [
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,12 +56,13 @@ export default function Header() {
               alt="Way2Build Logo"
               width={80}
               height={15}
-              priority
             />
           </Link>
         </div>
-        <div className="flex items-center space-x-12">
-          <ul className="hidden md:flex items-center space-x-8 relative font-medium tracking-wider text-sm">
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-12">
+          <ul className="flex items-center space-x-8 relative font-medium tracking-wider text-sm">
             <li><Link href="/about" className={`hover:text-[#b19777] transition-colors duration-300`}>ABOUT US</Link></li>
             <li
               onMouseEnter={() => setIsServicesOpen(true)}
@@ -94,9 +96,37 @@ export default function Header() {
             <li><Link href="/portfolio" className={`hover:text-[#b19777] transition-colors duration-300`}>PORTFOLIO</Link></li>
             <li><Link href="/contact" className={`hover:text-[#b19777] transition-colors duration-300`}>CONTACT</Link></li>
           </ul>
-          {/* <button className="border border-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-white hover:text-black transition-colors duration-300">
-            Let's Talk
-          </button> */}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Open mobile menu"
+            className="text-2xl"
+          >
+            <i className="ri-menu-line"></i>
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 bg-[#1f1f1f] z-50 transform transition-transform duration-300 ease-in-out md:hidden
+            ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="flex justify-end p-6">
+            <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu" className="text-white text-3xl">
+              <i className="ri-close-line"></i>
+            </button>
+          </div>
+          <nav className="flex flex-col items-center justify-center h-full -mt-16">
+            <ul className="text-center space-y-8 text-2xl text-white">
+              <li><Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>ABOUT US</Link></li>
+              <li><Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</Link></li>
+              <li><Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>PORTFOLIO</Link></li>
+              <li><Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</Link></li>
+            </ul>
+          </nav>
         </div>
       </nav>
     </header>
