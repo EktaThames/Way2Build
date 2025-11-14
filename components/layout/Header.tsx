@@ -50,7 +50,13 @@ export default function Header() {
       <nav className={`container mx-auto flex justify-between items-center px-6 sm:px-8 lg:px-16 transition-colors duration-300 ${isSticky ? 'text-black' : 'text-white'}`}>
         <div className="flex-shrink-0">
           <Link href="/">
-            <Image src="/images/logo.png" alt="Way2Build Logo" width={80} height={15} priority />
+            <Image
+              src={isSticky ? "/images/logo2.png" : "/images/logo.png"}
+              alt="Way2Build Logo"
+              width={80}
+              height={15}
+              priority
+            />
           </Link>
         </div>
         <div className="flex items-center space-x-12">
