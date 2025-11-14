@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const servicesList = [
   'Full Home Renovation',
@@ -47,8 +48,10 @@ export default function Header() {
       className={`top-0 left-0 w-full z-50 transition-all duration-300 ${isSticky ? 'fixed bg-white shadow-md py-4' : 'absolute bg-transparent py-8'}`}
     >
       <nav className={`container mx-auto flex justify-between items-center px-6 sm:px-8 lg:px-16 transition-colors duration-300 ${isSticky ? 'text-black' : 'text-white'}`}>
-        <div className="text-3xl font-bold">
-          <Link href="/" className="hover:text-[#b19777] tracking-wide">Way2Build</Link>
+        <div className="flex-shrink-0">
+          <Link href="/">
+            <Image src="/images/logo.png" alt="Way2Build Logo" width={80} height={15} priority />
+          </Link>
         </div>
         <div className="flex items-center space-x-12">
           <ul className="hidden md:flex items-center space-x-8 relative font-medium tracking-wider text-sm">
