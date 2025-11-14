@@ -74,7 +74,7 @@ const ContactPage = () => {
               <i className="ri-mail-line"></i>
             </div>
             <h3 className="text-2xl font-semibold">Email Us</h3>
-            <p className="text-gray-400">way2build.co.uk</p>
+            <p className="text-gray-400">hello@way2build.co.uk</p>
           </div>
           <div className="flex flex-col items-center space-y-4">
             <div className="w-20 h-20 bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#b19777] text-4xl mb-4">

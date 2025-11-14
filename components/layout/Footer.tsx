@@ -55,7 +55,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <i className="ri-mail-line text-[#b19777] text-xl mr-4 mt-1"></i>
-                <span>way2build.co.uk</span>
+                <span>hello@way2build.co.uk</span>
               </li>
             </ul>
           </div>
