@@ -16,7 +16,7 @@ const beforeImages = [
   { id: 11, src: "/images/gallery11.jpeg", height: "h-96" },
 ];
 
-const afterImages = Array.from({ length: 25 }, (_, i) => ({
+const afterImages = Array.from({ length: 27 }, (_, i) => ({
   id: i + 1,
   src: `/images/after${i + 1}.jpg`,
   height: i % 2 === 0 ? "h-96" : "h-80",
