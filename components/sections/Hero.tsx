@@ -60,9 +60,9 @@ export default function Hero() {
                 We Create The Art<br />
                 Of Stylish Living
               </h1> 
-              <button className="mt-8 px-8 py-3 md:px-10 md:py-4 bg-white text-black text-[12px] md:text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">
+              {/* <button className="mt-8 px-8 py-3 md:px-10 md:py-4 bg-white text-black text-[12px] md:text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">
                 Our Portfolio
-              </button>
+              </button> */}
             </div>
           </div>
         ))}
