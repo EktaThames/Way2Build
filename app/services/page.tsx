@@ -64,18 +64,19 @@ const ServicesPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allServices.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white border border-gray-200 rounded-lg p-8 text-left group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-              >
-                <div className="mb-6">
-                  <i className={`${service.icon} text-5xl text-[#b19777]`}></i>
+              <Link href="/contact" key={service.title} className="block h-full">
+                <div
+                  className="bg-white border border-gray-200 rounded-lg p-8 text-left group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full"
+                >
+                  <div className="mb-6">
+                    <i className={`${service.icon} text-5xl text-[#b19777]`}></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#222222] mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-base">{service.description}</p>
                 </div>
-                <h3 className="text-2xl font-bold text-[#222222] mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-base">{service.description}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -103,4 +104,3 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
-

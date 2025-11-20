@@ -12,13 +12,6 @@ const services = [
   { icon: 'ri-building-line', title: 'Renovation', description: 'Transforming spaces with innovative renovations.' },
 ];
 
-const teamMembers = [
-  { name: 'John Smith', role: 'Lead Architect', image: '/images/person.jpg' },
-  { name: 'Jane Doe', role: 'Interior Designer', image: '/images/person.jpg' },
-  { name: 'Mike Johnson', role: 'Project Manager', image: '/images/person.jpg' },
-  { name: 'Emily White', role: 'Structural Engineer', image: '/images/person.jpg' },
-];
-
 const AboutPage = () => {
   return (
     <div className="bg-white text-black font-sans">
@@ -47,40 +40,36 @@ const AboutPage = () => {
 
       {/* About Section */}
       <section className="py-24 md:py-32">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-screen-lg mx-auto px-6 sm:px-8 lg:px-16 text-center">
           <div className="space-y-6">
             <p className="text-[#b19777] font-semibold uppercase tracking-widest">About Us</p>
             <h2 className="text-4xl md:text-5xl font-bold text-[#222222] leading-tight">
               We are the leaders in the architectural industry.
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
               For over 20 years, Way2Build has been at the forefront of architectural innovation, creating spaces that are not only visually stunning but also sustainable and functional. Our commitment to excellence has made us a trusted partner for clients worldwide.
             </p>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center">
-                <i className="ri-check-line text-[#b19777] mr-3 text-xl"></i>
-                Award-winning design and architecture.
-              </li>
-              <li className="flex items-center">
-                <i className="ri-check-line text-[#b19777] mr-3 text-xl"></i>
-                Commitment to sustainability and green building.
-              </li>
-              <li className="flex items-center">
-                <i className="ri-check-line text-[#b19777] mr-3 text-xl"></i>
-                A collaborative approach with our clients.
-              </li>
-            </ul>
-            <button className="mt-6 bg-[#b19777] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#a18667] transition-colors duration-300">
-              Read More
-            </button>
-          </div>
-          <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden">
-            <Image
-              src="/images/about-content.jpg" // Replace with your image
-              alt="Office interior"
-              layout="fill"
-              objectFit="cover"
-            />
+            <div className="mt-8 inline-block text-left">
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center">
+                  <i className="ri-check-line text-[#b19777] mr-3 text-xl"></i>
+                  Award-winning design and architecture.
+                </li>
+                <li className="flex items-center">
+                  <i className="ri-check-line text-[#b19777] mr-3 text-xl"></i>
+                  Commitment to sustainability and green building.
+                </li>
+                <li className="flex items-center">
+                  <i className="ri-check-line text-[#b19777] mr-3 text-xl"></i>
+                  A collaborative approach with our clients.
+                </li>
+              </ul>
+            </div>
+            <div className="mt-8">
+              <button className="bg-[#b19777] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#a18667] transition-colors duration-300">
+                Read More
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -102,14 +91,10 @@ const AboutPage = () => {
         </div>
       </section>
 
-      
-
       {/* Testimonials Section */}
       <section>
         <Testimonials theme="dark" />
       </section>
-
-      
 
     </div>
   );
