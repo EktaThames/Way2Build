@@ -102,60 +102,14 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-16">
-          <div className="text-center mb-16 md:mb-20">
-            <p className="text-[#b19777] font-semibold uppercase tracking-widest">Our Team</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#222222] mt-2">Meet Our Experts</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member) => (
-              <div key={member.name} className="text-center group">
-                <div className="relative h-96 overflow-hidden rounded-lg mb-6">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-[#222222]">{member.name}</h3>
-                <p className="text-gray-500">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Testimonials Section */}
       <section>
         <Testimonials theme="dark" />
       </section>
 
-      {/* Clients Section */}
-      {/* <section className="py-24 bg-white">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-            <div className="flex justify-center">
-              <Image src="/images/client1.png" alt="Client 1" width={140} height={40} className="opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/images/client2.png" alt="Client 2" width={140} height={40} className="opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/images/client3.png" alt="Client 3" width={140} height={40} className="opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/images/client4.png" alt="Client 4" width={140} height={40} className="opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="/images/client5.png" alt="Client 5" width={140} height={40} className="opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-          </div>
-        </div>
-      </section> */}
+      
 
     </div>
   );
