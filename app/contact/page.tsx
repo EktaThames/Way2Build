@@ -61,7 +61,7 @@ const ContactPage = () => {
       <div className="bg-[#1f1f1f] py-24">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-16">
         {/* Contact Info Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24 text-center">
           <div className="flex flex-col items-center space-y-4">
             <div className="w-20 h-20 bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#b19777] text-4xl mb-4">
               <i className="ri-map-pin-line"></i>
@@ -74,7 +74,7 @@ const ContactPage = () => {
               <i className="ri-mail-line"></i>
             </div>
             <h3 className="text-2xl font-semibold">Email Us</h3>
-            <p className="text-gray-400">hello@way2build.co.uk</p>
+            <a href="mailto:hello@way2build.co.uk" className="text-gray-400 hover:text-[#b19777] transition-colors duration-300">hello@way2build.co.uk</a>
           </div>
           <div className="flex flex-col items-center space-y-4">
             <div className="w-20 h-20 bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#b19777] text-4xl mb-4">
@@ -83,6 +83,15 @@ const ContactPage = () => {
             <h3 className="text-2xl font-semibold">Call Us</h3>
             <p className="text-gray-400">+44 7350869596</p>
           </div>
+          {/* WhatsApp Chat Option */}
+          <div className="flex flex-col items-center space-y-4">
+            <div className="w-20 h-20 bg-[#2a2a2a] rounded-full flex items-center justify-center text-[#b19777] text-4xl mb-4">
+              <i className="ri-whatsapp-line"></i> {/* Using a WhatsApp icon */}
+            </div>
+            <h3 className="text-2xl font-semibold">WhatsApp Us</h3>
+            <a href="https://wa.me/447350869596?text=Hello%20Way2Build%2C%20I'm%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#b19777] transition-colors duration-300">Chat on WhatsApp</a>
+          </div>
+
         </div>
 
         {/* Contact Form Section */}
